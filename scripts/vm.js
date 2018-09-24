@@ -14,7 +14,7 @@ const vm = new Vue({
     listAdd: function() {//Checks for input field value, if value exists add to list1.
       console.log(this);
       if (this.items.list1 === '') {
-          alert("Field empty");
+          alert("Field empty! All prompts and alerts are placeholder.");
       }else if (this.items.toDo) {
         let content = this.items.list1;
         console.log(content);
@@ -49,9 +49,9 @@ const vm = new Vue({
     triggerList1 () {//Checks for existence of child nodes on <ul> for list1. If they exist will get confirmation from user to delete all childnodes/clear the list.
       let array1 = this.$refs.list1Clear;
       if (array1.childNodes.length === 0) {
-        alert("There is nothing to clear");
+        alert("There is nothing to clear. All prompts and alerts are placeholder.");
       } else {
-        let confirmation = prompt("This will delete the entire list. Are you sure?");
+        let confirmation = prompt("This will delete the entire list. Type 'yes' if you want to clear this list. All prompts and alerts are placeholder.);
         if (confirmation === "yes") {
           while (array1.childNodes.length > 0) {
             array1.removeChild(array1.firstChild);
@@ -62,9 +62,9 @@ const vm = new Vue({
     triggerList2 () {//Checks for existence of child nodes on <ul> for list1. If they exist will get confirmation from user to delete all childnodes/clear the list.
       let array2 = this.$refs.list2Clear;
       if (array2.childNodes.length === 0) {
-        alert("There is nothing to clear");
+        alert("There is nothing to clear. All prompts and alerts are placeholder.");
       } else {
-        let confirmation = prompt("This will delete the entire list. Are you sure?");
+        let confirmation = prompt("This will delete the entire list. Type 'yes' if you want to clear this list. All prompts and alerts are placeholder.");
         if (confirmation === "yes") {
           while (array2.childNodes.length > 0) {
             array2.removeChild(array2.firstChild);
