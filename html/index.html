@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title></title>
+      
+      <link href='../styles/style.css' rel='stylesheet'>
+      
+  </head>
+  <body>
+    <div class="to-do-app">
+      <div class="flex-container-input-and-toggle">
+        <div class="input-and-toggle-container">
+          <input class="task-input" type="text" placeholder="Add a task" v-on:keypress.enter="listAdd()" v-model="items.list1">
+          <button class="completed-toggle-button button" type="button" v-on:click="hideDone()">Hide Done</button>
+        </div>
+      </div>
+      <div class="flex-container-lists" id="list-items">
+        <div class="lists-container">
+          <div class="to-be-completed-list">
+            <h3 class="to-complete-title">TO BE COMPLETED</h3>
+            <p class="clear-list-button close"  @click="triggerList1"></p>
+            <ul class="list-items" ref="list1Clear">
+              <li v-for="item in items.toDo" v-bind:content="item.content" v-on:click="listCompleteCheck(item)"> {{ item.content }} </li>
+            </ul>
+          </div>
+          <div class="completed-list" v-bind:class="{ 'hidden': visible}">
+            <h3 class="completed-title">COMPLETED</h3>
+            <p class="clear-list-button close" @click="triggerList2"></p>
+            <ul class="list-items" ref="list2Clear" id="list2">
+              <li v-for="item in items.complete" v-bind:content="item.content" v-on:click="listCompleteCheck(item)" class="completed-item"> {{ item.content }} </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>      
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src='../scripts/script.js'></script>
+</html>
