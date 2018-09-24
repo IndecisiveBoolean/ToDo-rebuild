@@ -51,7 +51,7 @@ const vm = new Vue({
       if (array1.childNodes.length === 0) {
         alert("There is nothing to clear. All prompts and alerts are placeholder.");
       } else {
-        let confirmation = prompt("This will delete the entire list. Type 'yes' if you want to clear this list. All prompts and alerts are placeholder.);
+        let confirmation = prompt("This will delete the entire list. Type 'yes' if you want to clear this list. All prompts and alerts are placeholder.");
         if (confirmation === "yes") {
           while (array1.childNodes.length > 0) {
             array1.removeChild(array1.firstChild);
